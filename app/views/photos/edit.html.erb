@@ -1,0 +1,9 @@
+<h1> Update Photo </h1>
+
+<%= form_for [@current_user, @photo], :html => { :multipart => true } do |f| %>
+  <div class ="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <p><%= f.submit "Submit", :class => "btn btn-warning btn-xs" %></p>
+<% end %>

@@ -4,7 +4,13 @@
 <%= link_to "My Photos", user_path(current_user.id) %>
 
 <% Photo.all.each do |photo| %>
+<div style="text-align:center">
 <%= link_to photo_path(photo.id) do %>
-  <p style="text-align:center"><%= image_tag photo.photo.url(:medium) %></p></br>
+  <p ><%= image_tag photo.photo.url(:medium) %></p>
+
+
 <% end %>
+  <%= photo.name %>
+</br>
+</div>
 <% end %>

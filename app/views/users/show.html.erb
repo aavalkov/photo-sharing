@@ -1,5 +1,11 @@
 <h1>My Photos</h1>
 
+<div style="text-align:center">
 <% @photos.each do |photo| %>
-<p style="text-align:center"><%=  link_to (image_tag photo.photo.url(:medium)) %></p></br>
+<%= link_to photo_path(photo.id) do %>
+<p ><%= image_tag photo.photo.url(:medium) %></p>
+<%= photo.name %>
+</br>
 <% end %>
+<% end %>
+</div>
