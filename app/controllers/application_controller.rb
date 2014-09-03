@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
   end
+
+  def logged_in?
+    redirect_to photos_path if current_user
+  end
 end
