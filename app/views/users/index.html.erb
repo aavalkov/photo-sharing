@@ -1,3 +1,10 @@
 <h1> Welcome <%= current_user.email %> </h1>
 
-<%= link_to "Upload Profile Photo", new_photo_path %>
+<%= link_to "Upload Photos", new_photo_path %>
+<%= link_to "My Photos", user_path(current_user.id) %>
+
+<% Photo.all.each do |photo| %>
+<%= link_to photo_path(photo.id) do %>
+  <p style="text-align:center"><%= image_tag photo.photo.url(:medium) %></p></br>
+<% end %>
+<% end %>

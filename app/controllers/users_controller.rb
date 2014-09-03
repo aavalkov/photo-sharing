@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @photos = current_user.photos
+  end
+
 private
  def user_params
    params.require(:user).permit(:email, :password, :password_confirmation)
