@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @tag %>
+
+<%= form_for(@tag) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <input type="hidden" name="tag[photo_ids][]" value="<%= photo.id %>">
+
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

@@ -20,6 +20,8 @@ class UsersController < ApplicationController
 
   def show
     @photos = current_user.photos
+    @tag = Tag.new
+
   end
 
 private

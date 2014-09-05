@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :photos
   resources :sessions
+  resources :tags , :only => [:create]
 end
